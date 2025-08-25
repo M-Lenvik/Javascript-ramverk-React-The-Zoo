@@ -3,6 +3,10 @@ import type { Animal } from "../models/Animal";
 
 const API_URL = "https://animals.azurewebsites.net/api/animals";
 
+/**
+ * Hämtar alla djur från API:t.
+ * Returnerar alltid en array, tom om något går fel.
+ */
 export const fetchAnimals = async (): Promise<Animal[]> => {
   try {
     const response = await fetch(API_URL);

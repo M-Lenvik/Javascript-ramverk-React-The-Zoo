@@ -2,6 +2,14 @@ import { useEffect, useState } from "react";
 import { fetchAnimals } from "../../services/animalService";
 import { type Animal } from "../../models/Animal";
 import "./TheZooo.scss";
+import { Link } from "react-router-dom";
+
+const clearStorage = () => {
+    localStorage.removeItem("animals");
+    alert("LocalStorage tömd!");
+  };
+
+
 
 
 
@@ -9,7 +17,7 @@ export const TheZoo = () => {
     const [animals, setAnimals] = useState<Animal[]>([]);
 
   useEffect(() => {
-    // Kolla om vi redan har djur i state
+    // Kolla om djur redan finns i state
     if (animals.length > 0) return;
 
     const loadAnimals = async () => {
@@ -37,17 +45,28 @@ export const TheZoo = () => {
 
     return (
     <>
+    <button onClick={clearStorage} style={{ marginLeft: "20px" }}>
+        Töm localStorage
+      </button>
+
+
+
         <h1>The Zoo</h1>
         {(() => {
             if (animals.length === 0) {
                 return <p>Laddar djur...</p>;
-            } else {
+            } 
+            
+            else {
                 return animals.map(a => (
                     <div className="theZooPageAnimal"
-                    
                     key={a.id}>
-                        <h2>{a.name}</h2>
-                        <img src={a.imageUrl} alt={a.name} width="150" />
+                        <Link to={`/zoo/${a.id}`} className="link">
+                            <h2>
+                                {a.name}
+                            </h2>
+                            <img src={a.imageUrl} alt={a.name} width="150" />
+                        </Link>
                     </div>
                 ));
             }
@@ -56,3 +75,4 @@ export const TheZoo = () => {
 );
 
 };
+
