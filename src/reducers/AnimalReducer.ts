@@ -1,7 +1,9 @@
+// src/reducers/AnimalReducer.ts
 import type { Animal } from "../models/Animal";
 
 export const AnimalActionTypes = {
   SET_ANIMALS: "SET_ANIMALS",
+  // senare: FEED_ANIMAL etc.
 } as const;
 
 export type AnimalActionTypes = typeof AnimalActionTypes[keyof typeof AnimalActionTypes];

@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router";
 import { Layout } from "./pages/Layout";
 import { Start } from "./pages/Start";
-import { TheZoo } from "./pages/TheZoo/TheZoo";
+import { TheZoo } from "./pages/TheZoo";
 import { TheChosenAnimal } from "./pages/TheChosenAnimal";
 
 export const router = createBrowserRouter([
