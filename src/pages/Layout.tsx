@@ -1,9 +1,10 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { AnimalContext } from "../context/AnimalContext";
 import { useReducer, useEffect } from "react";
 import type { Animal } from "../models/Animal";
 import { AnimalReducer, AnimalActionTypes } from "../reducers/animalReducer";
 import { fetchAnimals } from "../services/animalService";
+import { Header } from "../components/Header";
 
 export const Layout = () => {
   const initial = (JSON.parse(localStorage.getItem("animals") || "[]") as Animal[]) || [];
@@ -28,17 +29,9 @@ export const Layout = () => {
 
 
 
-    return <>
+    return (
     <AnimalContext.Provider value={{ animals, dispatch }}>
-        <header>
-            <p>Meny, finns i layout.tsx</p>
-                <nav>
-                <ul>
-                    <li><NavLink to={"/"}>Start</NavLink></li>
-                    <li><NavLink to={"/zoo"}>Zoo</NavLink></li>
-                </ul>
-            </nav>
-        </header>
+        <Header/>
         
         <main>
             <h2>Outlet, presenteras i layout.tsx</h2>
@@ -49,5 +42,5 @@ export const Layout = () => {
             <p>&copy; 2025 The Zoo</p>
         </footer>
         </AnimalContext.Provider>
-    </>
+    );
 };
