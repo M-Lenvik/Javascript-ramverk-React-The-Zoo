@@ -1,0 +1,38 @@
+//_color.scss
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(0, 0, 0, 0.87);
+
+  /* Typografi och grunder */
+  --font-base: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-h3: system-ui, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --color-font: #22223b;
+
+  /* Färger – generellt tema */
+  --color-background: #9a8c98;
+  --color-primary: #c9ada7;
+  --color-secondary: #f2e9e4;
+  --color-headings: #22223b;
+
+  /* Neutrala färger */
+  --color-border: #505050;
+  --color-button: #1a1a1a;
+  --color-button-light: #f9f9f9;
+  --color-links: #22223b;
+  --color-links-hover: #f2e9e4;
+  --color-links-rgb: 34, 34, 59;
+
+
+  /* Skuggor */
+  --shadow-default: 4px 4px 4px 0px #4a4e69;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

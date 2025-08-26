@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useContext } from "react";
-import { AnimalCard } from "../components/AnimalCard";
+import { AnimalCard } from "../components/AnimalCard/AnimalCard";
 import { AnimalContext } from "../context/AnimalContext";
 
 export const TheChosenAnimal = () => {

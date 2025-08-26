@@ -1,4 +1,4 @@
-import { StartPage } from "../components/StartPage"
+import { StartPage } from "../components/StartPage/StartPage"
 
 export const Start = () => {
     return <>

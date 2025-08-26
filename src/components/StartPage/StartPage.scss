@@ -1,0 +1,33 @@
+/* Standardstil för mobilt */
+.homeBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url('/images/cameleont.png');
+  background-color: #70BCEE;
+  background-size: auto;
+  background-position: center 10em;
+  background-repeat: no-repeat;
+  z-index: -2;
+  border: 2px solid black;
+}
+
+.hero{
+    border: 2px solid black;
+}
+
+/* Anpassning för skärmar > 500px */
+@media (min-width: 500px) {
+  .homeBackground {
+    background-size: contain;
+  }
+}
+
+/* Anpassning för skärmar > 1500px */
+@media (min-width: 1500px) {
+  .homeBackground {
+    background-size: 1500px auto;
+  }
+}
