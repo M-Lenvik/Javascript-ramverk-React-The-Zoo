@@ -1,10 +1,6 @@
 import type { Animal } from "../models/Animal";
 
-type Props = {
-  animal: Animal;
-};
-
-export const AnimalCard = ({ animal }: Props) => {
+export const AnimalCard = ({ animal }: { animal: Animal }) => {
   return (
     <div className="animal-card">
       <h1>{animal.name}</h1>

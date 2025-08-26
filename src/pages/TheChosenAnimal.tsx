@@ -1,23 +1,13 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { type Animal } from ".././models/Animal";
+import { useContext } from "react";
 import { AnimalCard } from "../components/AnimalCard";
+import { AnimalContext } from "../context/AnimalContext";
 
 export const TheChosenAnimal = () => {
   const { id } = useParams<{ id: string }>();
-  const [animal, setAnimal] = useState<Animal | null>(null);
+  const {animals} = useContext (AnimalContext);
 
-  useEffect(() => {
-    if (!id) return;
-
-    const localData = localStorage.getItem("animals");
-    if (!localData) return;
-
-    const animals: Animal[] = JSON.parse(localData);
-    const foundAnimal = animals.find(a => a.id === Number(id));
-    if (foundAnimal) setAnimal(foundAnimal);
-  }, [id]);
-
+  const animal = animals.find(a => a.id === Number(id));
   if (!animal) return <p>Laddar djur…</p>;
 
 
