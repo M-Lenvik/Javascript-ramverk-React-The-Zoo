@@ -38,3 +38,22 @@
   object-fit: cover;
   border-radius: 8px;
 }
+
+
+.theZooPageAnimal {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+
+  &.mätt {
+    background-color: lightgreen;
+  }
+
+  &.hungrig {
+    background-color: yellow;
+  }
+
+  &.desperat {
+    background-color: lightcoral;
+  }
+}

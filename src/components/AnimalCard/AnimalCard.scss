@@ -49,3 +49,21 @@
     }
   }
 }
+
+.animal-card {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+
+  &.mätt {
+    background-color: lightgreen;
+  }
+
+  &.hungrig {
+    background-color: yellow;
+  }
+
+  &.desperat {
+    background-color: lightcoral;
+  }
+}
