@@ -10,22 +10,26 @@ export const ZooList =()=> {
     
   if (animals.length === 0) return <p>Laddar djur…</p>;
 
-  return (
-    <>
-         <div className="page-content">
+return (
+  <div className="page-content">
+    <h2>Här är alla våra djur</h2>
 
-      <h1>The Zoo</h1>
-
-      {animals.map(a => (
+    <div className="zoo-flex">
+      {animals.map((a) => (
         <div key={a.id} className="theZooPageAnimal">
           <Link to={`/zoo/${a.id}`} className="link">
             <h2>{a.name}</h2>
-            <img src={a.imageUrl} alt={a.name} width="150" onError={handleBrokenImage} />
+            <img
+              src={a.imageUrl}
+              alt={a.name}
+              onError={handleBrokenImage}
+            />
           </Link>
+          {a.shortDescription}
         </div>
       ))}
+    </div>
+  </div>
+);
 
-      </div>
-    </>
-  );
 };

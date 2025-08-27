@@ -1,5 +1,3 @@
-/* app.css */
-
 /* Sätter box-sizing för alla element. Denna regel ska alltid ligga först. */
 *,
 *::before,
@@ -17,7 +15,7 @@ body {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  background-color: #70BCEE; /* global fallback-färg */
+  background-color: #70bcee; /* global fallback-färg */
 }
 
 /* Gör bilder responsiva */

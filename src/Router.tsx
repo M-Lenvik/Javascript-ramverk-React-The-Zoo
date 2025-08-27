@@ -5,23 +5,23 @@ import { TheZoo } from "./pages/TheZoo";
 import { TheChosenAnimal } from "./pages/TheChosenAnimal";
 
 export const router = createBrowserRouter([
-    {
-        path:"/",
-        element: <Layout/>,
-                                            errorElement: <h2>Sidan kunde inte hittas</h2>, // placeholder för nu
-        children: [
-            {
-                path: "/",
-                element: <Start/>,
-            },
-            {
-                path: "/zoo",
-                element: <TheZoo/>,
-            },
-            {
-                path: "/zoo/:id",
-                element: <TheChosenAnimal/>,
-            },
-        ],
-    }
-])
+  {
+    path: "/",
+    element: <Layout />,
+    errorElement: <h2>Sidan kunde inte hittas</h2>, // placeholder för nu
+    children: [
+      {
+        path: "/",
+        element: <Start />,
+      },
+      {
+        path: "/zoo",
+        element: <TheZoo />,
+      },
+      {
+        path: "/zoo/:id",
+        element: <TheChosenAnimal />,
+      },
+    ],
+  },
+]);

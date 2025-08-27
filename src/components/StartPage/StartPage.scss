@@ -1,22 +1,27 @@
 /* Standardstil för mobilt */
 .homeBackground {
-  position: fixed;
+  position: fixed; /* eller absolute beroende på om du vill scrolla med */
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
   background-image: url('/images/cameleont.png');
-  background-color: #70BCEE;
-  background-size: auto;
+
+  background-size: contain;
   background-position: center 10em;
   background-repeat: no-repeat;
-  z-index: -2;
+  z-index: -1; /* ligger under allt innehåll */
   border: 2px solid black;
 }
 
-.hero{
-    border: 2px solid black;
+.hero {
+  width: 100%;
+  p {
+    width: 100%;
+    padding-left: 1%;
+  }
 }
+
 
 /* Anpassning för skärmar > 500px */
 @media (min-width: 500px) {

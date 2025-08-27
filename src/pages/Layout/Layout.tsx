@@ -8,7 +8,8 @@ import { Header } from "../../components/Header/Header";
 import "./Layout.scss";
 
 export const Layout = () => {
-  const initial = (JSON.parse(localStorage.getItem("animals") || "[]") as Animal[]) || [];
+  const initial =
+    (JSON.parse(localStorage.getItem("animals") || "[]") as Animal[]) || [];
   const [animals, dispatch] = useReducer(AnimalReducer, initial);
 
   useEffect(() => {
@@ -26,17 +27,15 @@ export const Layout = () => {
   return (
     <AnimalContext.Provider value={{ animals, dispatch }}>
       <div className="layout">
-        <div className="page-wrapper">
         <Header />
-
-        {/* Wrapper som styr maxbredden */}
         <div className="page-wrapper">
-          <main>
-            <Outlet /> {/* Alla sidor renderas här */}
-          </main>
+          {/* Wrapper som styr maxbredden */}
+          <div className="content-wrapper">
+            <main>
+              <Outlet /> {/* Alla sidor renderas här */}
+            </main>
+          </div>
         </div>
-        </div>
-
       </div>
     </AnimalContext.Provider>
   );

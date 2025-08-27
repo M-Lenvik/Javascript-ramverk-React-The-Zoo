@@ -1,15 +1,17 @@
 header {
-  border: 2px solid red;
-  background-color: #6EC0F0;
+  background-color: #f1ba4b;
+  border: 2px solid #496c61;
+  border-radius: 8px;
   height: 10em;
-  max-width: 80%;
+  width: 90%;
+
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   margin: 0 auto;
   z-index: 100;
-  
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -25,6 +27,11 @@ header {
   display: flex;
   align-items: center;
   margin: 0 auto;
+
+  h1 {
+    color: #496c61;
+    text-shadow: 2px 2px #000000;
+  }
 }
 
 .header-nav ul {

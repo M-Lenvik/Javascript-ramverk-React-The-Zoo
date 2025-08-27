@@ -17,10 +17,8 @@ export const fetchAnimals = async (): Promise<Animal[]> => {
 
     const data: Animal[] = await response.json();
     return data;
-
   } catch (error) {
     console.error("fetchAnimals error:", error);
     return []; // Returnera alltid en array så komponenten inte kraschar
   }
 };
-

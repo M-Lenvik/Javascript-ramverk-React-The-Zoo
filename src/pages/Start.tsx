@@ -1,7 +1,9 @@
-import { StartPage } from "../components/StartPage/StartPage"
+import { StartPage } from "../components/StartPage/StartPage";
 
 export const Start = () => {
-    return <>
-        <StartPage/>
+  return (
+    <>
+      <StartPage />
     </>
-}
+  );
+};
