@@ -1,19 +1,27 @@
-// Hjälpfunktion för att räkna ut antal timmar sedan ett datum
-const getHoursSince = (dateString: string): number => {
-  const time = new Date(dateString).getTime();
-  return (Date.now() - time) / (1000 * 60 * 60);
+// Hjälpfunktioner för matning (testläge med sekunder)
+
+// Returnerar sekunder sedan senaste matning
+export const getTimeSinceFed = (lastFed: string) => {
+  return (Date.now() - new Date(lastFed).getTime()) / 1000; // sekunder
 };
 
-// Kollar om djuret är hungrigt baserat på senaste matningen och tröskelvärden
-export function getFeedingStatus(lastFed: string): "mätt" | "hungrig" | "desperat" {
-  const hoursSinceFed = getHoursSince(lastFed);
-
-  if (hoursSinceFed < 3) return "mätt";
-  if (hoursSinceFed < 5) return "hungrig";
+// Status för översikt (ZooList)
+export const getOverviewFeedingStatus = (lastFed: string): "mätt" | "hungrig" | "desperat" => {
+  const seconds = getTimeSinceFed(lastFed);
+  if (seconds < 10) return "mätt";
+  if (seconds < 30) return "hungrig";
   return "desperat";
-}
+};
 
-// Kollar om djuret kan matas (4 timmar måste ha gått)
-export function canFeedAnimal(lastFed: string): boolean {
-  return getHoursSince(lastFed) >= 4;
-}
+// Status för detalj (AnimalCard)
+export const getDetailFeedingStatus = (lastFed: string): "mätt" | "hungrig" | "desperat" => {
+  const seconds = getTimeSinceFed(lastFed);
+  if (seconds < 10) return "mätt";
+  if (seconds < 30) return "hungrig";
+  return "desperat";
+};
+
+// Kan djuret matas på detalj
+export const canFeedAnimal = (lastFed: string): boolean => {
+  return getTimeSinceFed(lastFed) >= 20; // kan matas efter 20 sekunder
+};
