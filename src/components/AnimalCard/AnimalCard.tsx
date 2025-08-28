@@ -7,9 +7,10 @@ type AnimalCardProps = {
   status: "mätt" | "hungrig" | "desperat";
   onFeed: () => void;
   feedable: boolean;
+  children?: React.ReactNode;
 };
 
-export const AnimalCard = ({ animal, status, onFeed, feedable }: AnimalCardProps) => {
+export const AnimalCard = ({ animal, status, onFeed, feedable, children }: AnimalCardProps) => {
   return (
     <div className={`animal-card ${status}`}>
       <h1>{animal.name}</h1>
@@ -32,6 +33,7 @@ export const AnimalCard = ({ animal, status, onFeed, feedable }: AnimalCardProps
       <button onClick={onFeed} disabled={!feedable}>
         {feedable ? "Mata djur" : "Kan inte matas än"}
       </button>
+      {children}
     </div>
   );
 };

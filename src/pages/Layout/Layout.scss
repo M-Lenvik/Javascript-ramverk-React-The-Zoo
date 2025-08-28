@@ -1,15 +1,10 @@
-/* layout.scss */
 
-/* Använder body som Flexbox-container för att centrera allt innehåll */
-/* Gäller enbart om du har tagit bort Flexbox från body i din app.css */
 body {
 margin: 0; 
 padding: 0; 
 display: flex;
-
 }
 
-/* Denna behållare styr utrymmet under den fixade headern */
 .layout {
     width: 100%; 
     min-height: 100vh;
@@ -18,10 +13,8 @@ display: flex;
     z-index: 1;
     
     background-color: transparent;
-
 }
 
-/* Wrapper som styr maxbredden på innehållet */
 .page-wrapper {
   box-sizing: border-box;
   width: 100%;
@@ -35,13 +28,11 @@ display: flex;
 
 
 
-/* Alla barn fyller wrappern */
 .page-wrapper > * {
   box-sizing: border-box;
   width: 100%;
 }
 
-/* Huvudinnehåll - Main-taggen */
 .page-wrapper main {
   width: 100%;
   flex-grow: 1;

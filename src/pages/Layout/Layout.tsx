@@ -29,7 +29,6 @@ export const Layout = () => {
       <div className="layout">
         <Header />
         <div className="page-wrapper">
-          {/* Wrapper som styr maxbredden */}
           <div className="content-wrapper">
             <main>
               <Outlet /> {/* Alla sidor renderas här */}

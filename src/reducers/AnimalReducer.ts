@@ -4,6 +4,7 @@ import type { Animal } from "../models/Animal";
 export const AnimalActionTypes = {
   SET_ANIMALS: "SET_ANIMALS",
   FEED_ANIMAL: "FEED_ANIMAL",
+  RESET_FEEDING_STATUS: "RESET_FEEDING_STATUS",
 } as const;
 
 export type AnimalActionTypes =
@@ -17,7 +18,8 @@ export type AnimalAction =
 | {
     type: typeof AnimalActionTypes.FEED_ANIMAL;
     payload: number; // djurets id
-  };
+  }
+| { type: typeof AnimalActionTypes.RESET_FEEDING_STATUS };
 
 export const AnimalReducer = (
   state: Animal[],
@@ -36,6 +38,15 @@ export const AnimalReducer = (
       localStorage.setItem("animals", JSON.stringify(newState));
       return newState;
     }
+
+
+
+    case AnimalActionTypes.RESET_FEEDING_STATUS: {
+      const newState = state.map((animal) => ({ ...animal }));
+      localStorage.setItem("animals", JSON.stringify(newState));
+      return newState;
+    }
+
     
 
 

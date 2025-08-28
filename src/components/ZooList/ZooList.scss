@@ -11,12 +11,11 @@
   margin-bottom: 2rem;
 }
 
-/* Flexcontainer för djuren */
 .zoo-flex {
   display: flex;
-  flex-wrap: wrap; /* tillåter flera rader */
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem; /* mellanrum mellan djuren */
+  gap: 2rem;
   width: 100%;
   border: 2px solid black;
   background-color: #f1ba4b;
@@ -24,7 +23,7 @@
 }
 
 .theZooPageAnimal {
-  flex: 0 0 35%; /* tar ca 45% av raden → 2 per rad med gap */
+  flex: 0 0 35%;
   display: flex;
   flex-direction: column;
   align-items: center;

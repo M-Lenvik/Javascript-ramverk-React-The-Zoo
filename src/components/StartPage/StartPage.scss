@@ -1,6 +1,6 @@
 /* Standardstil för mobilt */
 .homeBackground {
-  position: fixed; /* eller absolute beroende på om du vill scrolla med */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -10,7 +10,7 @@
   background-size: contain;
   background-position: center 10em;
   background-repeat: no-repeat;
-  z-index: -1; /* ligger under allt innehåll */
+  z-index: -1;
   border: 2px solid black;
 }
 

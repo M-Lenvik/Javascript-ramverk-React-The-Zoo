@@ -1,8 +1,9 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { useParams } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AnimalCard } from "../components/AnimalCard/AnimalCard";
 import { AnimalContext } from "../context/AnimalContext";
-import { getDetailFeedingStatus, canFeedAnimal } from "../helpers/feeding";
+import { getDetailFeedingStatus, canFeedAnimal, getHoursUntilFeedable } from "../helpers/feeding";
 import { AnimalActionTypes } from "../reducers/AnimalReducer";
 
 export const TheChosenAnimal = () => {
@@ -12,23 +13,40 @@ export const TheChosenAnimal = () => {
   const animal = animals.find((a) => a.id === Number(id));
   if (!animal) return <p>Laddar djur…</p>;
 
-  const status = getDetailFeedingStatus(animal.lastFed);
-  const feedable = canFeedAnimal(animal.lastFed);
+
+  const [status, setStatus] = useState(getDetailFeedingStatus(animal.lastFed));
+  const [feedable, setFeedable] = useState(canFeedAnimal(animal.lastFed));
+  const [hoursLeft, setHoursLeft] = useState(getHoursUntilFeedable(animal.lastFed));
+
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setStatus(getDetailFeedingStatus(animal.lastFed));
+      setFeedable(canFeedAnimal(animal.lastFed));
+      setHoursLeft(getHoursUntilFeedable(animal.lastFed));
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [animal.lastFed]);
+
 
   const handleFeed = () => {
     if (!feedable) return;
-    const updatedAnimals = animals.map((a) =>
-      a.id === animal.id ? { ...a, lastFed: new Date().toString() } : a
-    );
-    dispatch({ type: AnimalActionTypes.SET_ANIMALS, payload: updatedAnimals });
+    dispatch({ type: AnimalActionTypes.FEED_ANIMAL, payload: animal.id });
   };
 
   return (
     <AnimalCard
       animal={animal}
       status={status}
-      feedable={feedable}
       onFeed={handleFeed}
-    />
+      feedable={feedable}
+    >
+
+     {!feedable && (
+        <p>Du kan mata djuret om {hoursLeft.toFixed(1)} timmar</p>
+      )}
+      </AnimalCard>
   );
 };
+

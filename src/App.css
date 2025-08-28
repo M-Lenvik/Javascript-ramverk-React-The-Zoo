@@ -1,11 +1,10 @@
-/* Sätter box-sizing för alla element. Denna regel ska alltid ligga först. */
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* Globala stilar för body och HTML */
 html,
 body {
   margin: 0;
@@ -15,10 +14,9 @@ body {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  background-color: #70bcee; /* global fallback-färg */
+  background-color: #70bcee;
 }
 
-/* Gör bilder responsiva */
 img,
 table,
 video,
