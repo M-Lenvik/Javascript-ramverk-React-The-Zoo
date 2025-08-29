@@ -23,7 +23,7 @@
   }
 
   .theZooPageAnimal {
-    flex: 0 0 35%;
+    flex: 1 1 clamp(15em, 30%, 20em);
     display: flex;
     flex-direction: column;
     align-items: center;

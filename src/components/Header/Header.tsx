@@ -6,7 +6,11 @@ export const Header = () => {
     <>
       <header className="header">
         <div className="header-container">
-          <NavLink to={"/"} className="header-link-logo">
+          <NavLink
+            to={"/"}
+            className="header-link-logo"
+            aria-label="Gå till startsidan"
+          >
             <img
               src="/images/logo.png"
               alt="Cameleont-ikon"

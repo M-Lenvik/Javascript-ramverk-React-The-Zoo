@@ -15,16 +15,22 @@ export const ZooList = ({ animals }: ZooListProps) => {
   if (animals.length === 0) return <p>Laddar djur…</p>;
 
   return (
-    <div className="page-content">
-      <div className="zoo-content">
+    <main className="page-content">
+      <header className="zoo-content">
         <h1>Djuren</h1>
-        <p>Mata djuren när de är hungriga</p>
-      </div>
-      <div className="zoo-flex">
+        <p>
+          Här får du en överblick över alla våra djur. Du kan se om de är mätta,
+          hungriga eller i desperat behov av mat. <br />
+          Hjälp till att mata dem genom att klicka på de hungriga eller
+          desperata djuren. Varje gång du matar ett djur blir det mätt och
+          belåtet.
+        </p>
+      </header>
+      <section className="zoo-flex">
         {animals.map((animal) => {
           const status = getOverviewFeedingStatus(animal.lastFed);
           return (
-            <div key={animal.id} className={`theZooPageAnimal ${status}`}>
+            <article key={animal.id} className={`theZooPageAnimal ${status}`}>
               <Link to={`/zoo/${animal.id}`} className="link">
                 <h2>{animal.name}</h2>
                 <img
@@ -40,10 +46,10 @@ export const ZooList = ({ animals }: ZooListProps) => {
                 Senast {animal.name} fick mat var{" "}
                 {new Date(animal.lastFed).toLocaleString()}
               </p>
-            </div>
+            </article>
           );
         })}
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };

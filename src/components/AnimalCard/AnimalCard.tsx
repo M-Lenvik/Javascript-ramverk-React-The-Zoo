@@ -21,9 +21,12 @@ export const AnimalCard = ({
   onBack,
 }: AnimalCardProps) => {
   return (
-    <div className={`animal-card ${status}`}>
-        <button className="back-button" onClick={onBack}>Tillbaka till djuren</button> {/* NY KNAPP */}
-      <div className="image-wrapper">
+    <article className={`animal-card ${status}`}>
+      <button className="back-button" onClick={onBack}>
+        Tillbaka till djuren
+      </button>{" "}
+      {/* NY KNAPP */}
+      <figure className="image-wrapper">
         <img
           src={animal.imageUrl}
           alt={animal.name}
@@ -31,12 +34,11 @@ export const AnimalCard = ({
           onError={handleBrokenImage}
         />
 
-        <div className="heading-background">
+        <figcaption className="heading-background">
           <h1>{animal.name}</h1>
-        </div>
-      </div>
-
-      <div className="animal-card-description">
+        </figcaption>
+      </figure>
+      <section className="animal-card-description">
         <p>{animal.shortDescription}</p>
 
         <div className="hungerstatus">
@@ -45,7 +47,7 @@ export const AnimalCard = ({
             Senast {animal.name} fick mat var{" "}
             {new Date(animal.lastFed).toLocaleString()}.
           </p>
-            {children}
+          {children}
           <button onClick={onFeed} disabled={!feedable}>
             {feedable
               ? `Mata ${animal.name}`
@@ -69,7 +71,7 @@ export const AnimalCard = ({
           <strong>Artbeskrivning: </strong>
         </p>
         <p>{animal.longDescription}</p>
-      </div>
-    </div>
+      </section>
+    </article>
   );
 };

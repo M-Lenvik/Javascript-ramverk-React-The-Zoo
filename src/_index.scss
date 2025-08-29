@@ -7,7 +7,7 @@
 // Globala CSS-variabler (Custom Properties) för att undvika färg-hårdkodning
 // Dessa kan användas i alla CSS- och SCSS-filer med var(--namn)
 :root {
-  --bg-color: #2D2D2C;
+  --bg-color: #2d2d2c;
   --font-family: sans-serif;
   --color-font: #e4e4e4;
 }
@@ -28,6 +28,6 @@ h3 {
   color: $text-color;
 }
 
-p{
+p {
   color: $text-color;
 }

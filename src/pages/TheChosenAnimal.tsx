@@ -39,9 +39,6 @@ export const TheChosenAnimal = () => {
     dispatch({ type: AnimalActionTypes.FEED_ANIMAL, payload: animal.id });
   };
 
-
-  
-
   return (
     <AnimalCard
       animal={animal}
@@ -50,11 +47,11 @@ export const TheChosenAnimal = () => {
       feedable={feedable}
       onBack={() => navigate(-1)}
     >
-
-            {!feedable && (
-                <p>Du kan mata {animal.name} om {hoursLeft.toFixed(1)} timmar</p>
-            )}
-
+      {!feedable && (
+        <p>
+          Du kan mata {animal.name} om {hoursLeft.toFixed(1)} timmar
+        </p>
+      )}
     </AnimalCard>
   );
 };

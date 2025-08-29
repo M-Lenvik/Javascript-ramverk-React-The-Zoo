@@ -1,19 +1,19 @@
 @import "../../Styles/color";
 
+/* Standardstil för mobilt */
 .header {
   background-color: $dark-grey-bg;
-  border-radius: 8px;
-  height: 6em;
+  height: auto;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  margin: 0 auto;
   z-index: 100;
+
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  align-items: center; // Centrering vertikalt
 
   .header-container {
     width: 90%;
@@ -21,13 +21,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0;
+    padding: 0.5em 0;
     background-color: $accent-green;
     margin-top: 0.5em;
   }
 
   .header-icon {
-    height: 5em;
+    height: 4em;
     transform: scaleX(-1);
     margin-left: 1em;
   }
@@ -35,8 +35,7 @@
   .header-nav {
     display: flex;
     align-items: center;
-
-    font-size: 2em;
+    font-size: 1.2em; // Mindre font-storlek för mobilt
     font-weight: bold;
     text-transform: uppercase;
     flex-grow: 1;
@@ -61,6 +60,28 @@
           }
         }
       }
+    }
+  }
+}
+
+/* Anpassning för skärmar > 768px (Desktop-version) */
+@media (min-width: 768px) {
+  .header {
+    height: 6em;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+
+    .header-container {
+      padding: 0;
+    }
+
+    .header-icon {
+      height: 5em;
+    }
+
+    .header-nav {
+      font-size: 2em; // Återgå till större font-storlek för desktop
     }
   }
 }
