@@ -8,7 +8,7 @@ import {
   canFeedAnimal,
   getHoursUntilFeedable,
 } from "../helpers/feeding";
-import { AnimalActionTypes } from "../reducers/animalReducer";
+import { AnimalActionTypes } from "../reducers/AnimalReducer";
 
 export const TheChosenAnimal = () => {
   const { id } = useParams<{ id: string }>();

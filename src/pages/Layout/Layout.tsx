@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import { AnimalContext } from "../../context/AnimalContext";
 import { useReducer, useEffect } from "react";
 import type { Animal } from "../../models/Animal";
-import { AnimalReducer, AnimalActionTypes } from "../../reducers/animalReducer";
+import { AnimalReducer, AnimalActionTypes } from "../../reducers/AnimalReducer";
 import { fetchAnimals } from "../../services/animalService";
 import { Header } from "../../components/Header/Header";
 import "./Layout.scss";

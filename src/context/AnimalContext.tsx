@@ -1,7 +1,7 @@
 // src/context/AnimalContext.ts
 import { createContext, type Dispatch } from "react";
 import type { Animal } from "../models/Animal";
-import type { AnimalAction } from "../reducers/animalReducer";
+import type { AnimalAction } from "../reducers/AnimalReducer";
 
 export type AnimalContextType = {
   animals: Animal[];
