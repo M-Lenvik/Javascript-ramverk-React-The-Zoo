@@ -1,9 +1,18 @@
 // src/helpers/image.ts
-export const fallbackImage = "/images/fallback.png"; // lokal fallback-bild
+// Dynamiskt baserat på var appen är hostad
+const basePath = import.meta.env.BASE_URL || "/";
+export const fallbackImage = `${basePath}images/fallback.png`;
 
 export const handleBrokenImage = (
   e: React.SyntheticEvent<HTMLImageElement, Event>,
 ) => {
+  console.log("Fallback triggas", e.currentTarget);
   const target = e.currentTarget;
   target.src = fallbackImage;
+  target.onerror = null;
 };
+
+
+
+
+
