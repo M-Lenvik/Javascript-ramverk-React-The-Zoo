@@ -5,4 +5,5 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   base: "/fed24d-the-zoo-M-Lenvik/",
+  base: "/fed24d-the-zoo-M-Lenvik/",
 });
