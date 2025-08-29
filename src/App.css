@@ -3,7 +3,6 @@
 
 /* App.css */
 
-
 :root {
   --color-links: #e4e4e4;
   --color-links-hover: #83598d;
@@ -34,13 +33,11 @@ h2,
 h3,
 h4,
 h5,
-h6{
+h6 {
   font-weight: bold;
   font-size: 3em;
   color: var(--color-font);
 }
-
-
 
 button {
   border-radius: 8px;
@@ -60,4 +57,3 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-

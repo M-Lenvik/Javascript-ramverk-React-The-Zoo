@@ -10,13 +10,12 @@ const clearStorage = () => {
 export const TheZoo = () => {
   const { animals } = useContext(AnimalContext);
 
-
   if (animals.length === 0) return <p>Laddar djur…</p>;
 
   return (
     <>
       <ZooList animals={animals} />
-      
+
       <button onClick={clearStorage} style={{ marginLeft: "20px" }}>
         Töm localStorage
       </button>

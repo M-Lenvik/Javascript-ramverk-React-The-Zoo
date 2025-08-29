@@ -7,7 +7,7 @@
   left: 0;
   width: 50%;
   height: 100vh;
-  background-image: url('/images/camaleont_gemeni_darker.png');
+  background-image: url("/images/camaleont_gemeni_darker.png");
   transform: scaleX(-1);
   background-size: cover;
   background-position: right 6em;
@@ -23,7 +23,6 @@
   width: 50%;
   padding-top: 7em;
 }
-
 
 /* Anpassning för skärmar > 500px */
 @media (min-width: 500px) {

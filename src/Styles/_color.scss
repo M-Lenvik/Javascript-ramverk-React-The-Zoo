@@ -1,18 +1,15 @@
 // src/styles/_colors.scss
 
 // SCSS-variabler för färger
-$accent-green: #98D093;
-$accent-purple: #B94ED2;
-$accent-yellow: #F8B646;
-$accent-red: #892F5D;
+$accent-green: #98d093;
+$accent-purple: #b94ed2;
+$accent-yellow: #f8b646;
+$accent-red: #892f5d;
 $dark-grey-bg: #353534;
 $text-color: #e4e4e4;
 
 // Övriga globala variabler
 $shadow-default: 4px 4px 4px 0px #4a4e69;
-
-
-
 
 @keyframes glow-pulse {
   0% {

@@ -3,7 +3,12 @@ import { useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { AnimalCard } from "../components/AnimalCard/AnimalCard";
 import { AnimalContext } from "../context/AnimalContext";
-import { getDetailFeedingStatus, canFeedAnimal, getHoursUntilFeedable, getFeedingStatusText } from "../helpers/feeding";
+import {
+  getDetailFeedingStatus,
+  canFeedAnimal,
+  getHoursUntilFeedable,
+  getFeedingStatusText,
+} from "../helpers/feeding";
 import { AnimalActionTypes } from "../reducers/animalReducer";
 
 export const TheChosenAnimal = () => {
@@ -13,11 +18,11 @@ export const TheChosenAnimal = () => {
   const animal = animals.find((a) => a.id === Number(id));
   if (!animal) return <p>Laddar djur…</p>;
 
-
   const [status, setStatus] = useState(getDetailFeedingStatus(animal.lastFed));
   const [feedable, setFeedable] = useState(canFeedAnimal(animal.lastFed));
-  const [hoursLeft, setHoursLeft] = useState(getHoursUntilFeedable(animal.lastFed));
-
+  const [hoursLeft, setHoursLeft] = useState(
+    getHoursUntilFeedable(animal.lastFed),
+  );
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -29,25 +34,24 @@ export const TheChosenAnimal = () => {
     return () => clearInterval(interval);
   }, [animal.lastFed]);
 
-
   const handleFeed = () => {
     if (!feedable) return;
     dispatch({ type: AnimalActionTypes.FEED_ANIMAL, payload: animal.id });
   };
 
-
-    return (
-        <AnimalCard
-            animal={animal}
-            status={status}
-            onFeed={handleFeed}
-            feedable={feedable}
-        >
-            <p>{getFeedingStatusText(status, animal.name)}</p>
-            {!feedable && (
-                <p>Du kan mata {animal.name} om {hoursLeft.toFixed(1)} timmar</p>
-            )}
-        </AnimalCard>
-    );
+  return (
+    <AnimalCard
+      animal={animal}
+      status={status}
+      onFeed={handleFeed}
+      feedable={feedable}
+    >
+      <p>{getFeedingStatusText(status, animal.name)}</p>
+      {!feedable && (
+        <p>
+          Du kan mata {animal.name} om {hoursLeft.toFixed(1)} timmar
+        </p>
+      )}
+    </AnimalCard>
+  );
 };
-
