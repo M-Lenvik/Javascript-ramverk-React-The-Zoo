@@ -1,15 +1,11 @@
 /* layout.scss */
-
-// Importera din färgvariabel-fil först.
 @import "../../Styles/color";
 
-// Globala stilar som matchar din design
 body {
   background-color: $dark-grey-bg;
   color: $text-color;
 }
 
-// Huvudlayout för hela sidan
 .layout {
   width: 100%;
   min-height: 100vh;
@@ -17,7 +13,6 @@ body {
   flex-direction: column;
 }
 
-// Wrapper för hela sidans innehåll
 .page-wrapper {
   width: 100%;
   flex-grow: 1;
@@ -26,7 +21,6 @@ body {
   margin: 0 auto;
 }
 
-// Wrapper som styr maxbredden
 .content-wrapper {
   width: 100%;
   max-width: 1200px;
@@ -34,14 +28,12 @@ body {
   padding: 0 20px;
 }
 
-// Huvudinnehåll - main-taggen
 main {
   margin-top: 6em;
   width: 100%;
   flex-grow: 1;
 }
 
-// Generella stilar för media
 img,
 table,
 video,
@@ -50,7 +42,6 @@ iframe {
   height: auto;
 }
 
-// Tablet and Desktop styles
 @media (min-width: 768px) {
   main {
     margin-top: 7em;

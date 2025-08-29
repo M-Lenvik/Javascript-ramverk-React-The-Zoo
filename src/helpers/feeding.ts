@@ -1,29 +1,3 @@
-/*
-// Hjälpfunktioner för testläge
-export const getSecondsSinceFed = (lastFed: string) => {
-  return (Date.now() - new Date(lastFed).getTime()) / 1000; // sekunder
-};
-
-export const getOverviewFeedingStatus = (lastFed: string): "mätt" | "hungrig" | "desperat" => {
-  const seconds = getSecondsSinceFed(lastFed);
-  if (seconds < 10) return "mätt";
-  if (seconds < 30) return "hungrig";
-  return "desperat";
-};
-
-export const getDetailFeedingStatus = (lastFed: string): "mätt" | "hungrig" | "desperat" => {
-  const seconds = getSecondsSinceFed(lastFed);
-  if (seconds < 10) return "mätt";
-  if (seconds < 30) return "hungrig";
-  return "desperat";
-};
-
-export const canFeedAnimal = (lastFed: string): boolean => {
-  const seconds = getSecondsSinceFed(lastFed);
-  return seconds >= 20; // 20 sekunder
-};
-*/
-
 // src/helpers/feeding.ts
 // Hjälpfunktioner för matning
 export const getTimeSinceFed = (lastFed: string) => {
