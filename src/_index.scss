@@ -1,0 +1,27 @@
+/* index.scss */
+
+// Importera din SCSS-reset-fil först
+@import './Styles/_reset.scss';
+
+// Globala CSS-variabler (Custom Properties) för att undvika färg-hårdkodning
+// Dessa kan användas i alla CSS- och SCSS-filer med var(--namn)
+:root {
+  --bg-color: #353534;
+  --font-family: sans-serif;
+  --color-font: #e4e4e4;
+}
+
+// Globala stilar
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  font-family: var(--font-family);
+  color: var(--color-font);
+}
+
+h1,
+h2,
+h3{
+  font-weight: bold;
+  font-size: 3em;
+}

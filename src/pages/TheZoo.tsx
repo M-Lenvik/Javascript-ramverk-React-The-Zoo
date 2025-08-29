@@ -16,6 +16,7 @@ export const TheZoo = () => {
   return (
     <>
       <ZooList animals={animals} />
+      
       <button onClick={clearStorage} style={{ marginLeft: "20px" }}>
         Töm localStorage
       </button>

@@ -1,25 +1,27 @@
+@import "../.././pages/Layout/Layout.scss"; // Justera sökvägen till din Layout.scss
+
 /* Standardstil för mobilt */
 .homeBackground {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 50%;
   height: 100vh;
-  background-image: url('/images/cameleont.png');
-
-  background-size: contain;
-  background-position: center 10em;
+  background-image: url('/images/camaleont_gemeni_darker.png');
+  transform: scaleX(-1);
+  background-size: cover;
+  background-position: right 6em;
   background-repeat: no-repeat;
   z-index: -1;
-  border: 2px solid black;
 }
 
 .hero {
-  width: 100%;
-  p {
-    width: 100%;
-    padding-left: 1%;
-  }
+  position: fixed;
+  top: 6em;
+  right: 0;
+  padding: 0 2em;
+  width: 50%;
+  padding-top: 7em;
 }
 
 
@@ -33,6 +35,6 @@
 /* Anpassning för skärmar > 1500px */
 @media (min-width: 1500px) {
   .homeBackground {
-    background-size: 1500px auto;
+    background-size: contain;
   }
 }

@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { AnimalCard } from "../components/AnimalCard/AnimalCard";
 import { AnimalContext } from "../context/AnimalContext";
-import { getDetailFeedingStatus, canFeedAnimal, getHoursUntilFeedable } from "../helpers/feeding";
-import { AnimalActionTypes } from "../reducers/AnimalReducer";
+import { getDetailFeedingStatus, canFeedAnimal, getHoursUntilFeedable, getFeedingStatusText } from "../helpers/feeding";
+import { AnimalActionTypes } from "../reducers/animalReducer";
 
 export const TheChosenAnimal = () => {
   const { id } = useParams<{ id: string }>();
@@ -35,18 +35,19 @@ export const TheChosenAnimal = () => {
     dispatch({ type: AnimalActionTypes.FEED_ANIMAL, payload: animal.id });
   };
 
-  return (
-    <AnimalCard
-      animal={animal}
-      status={status}
-      onFeed={handleFeed}
-      feedable={feedable}
-    >
 
-     {!feedable && (
-        <p>Du kan mata djuret om {hoursLeft.toFixed(1)} timmar</p>
-      )}
-      </AnimalCard>
-  );
+    return (
+        <AnimalCard
+            animal={animal}
+            status={status}
+            onFeed={handleFeed}
+            feedable={feedable}
+        >
+            <p>{getFeedingStatusText(status, animal.name)}</p>
+            {!feedable && (
+                <p>Du kan mata {animal.name} om {hoursLeft.toFixed(1)} timmar</p>
+            )}
+        </AnimalCard>
+    );
 };
 

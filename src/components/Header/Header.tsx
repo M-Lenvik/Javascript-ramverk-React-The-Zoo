@@ -5,6 +5,7 @@ export const Header = () => {
   return (
     <>
       <header className="header">
+        <div className="header-container">
         <NavLink to={"/"} className="header-link-logo">
           <img
             src="/images/logo.png"
@@ -13,18 +14,19 @@ export const Header = () => {
           />
         </NavLink>
         <nav className="header-nav">
-          <NavLink to={"/"}>
-            <h1>The Zoo</h1>
-          </NavLink>
           <ul>
             <li>
-              <NavLink to={"/"}>Start</NavLink>
+              <NavLink to={"/"}>The Zoo</NavLink>
             </li>
             <li>
-              <NavLink to={"/zoo"}>Zoo</NavLink>
+              <NavLink to={"/zoo"}>Djuren</NavLink>
+            </li>
+            <li>
+              <NavLink to={"/about"}>Om Oss</NavLink>
             </li>
           </ul>
         </nav>
+            </div>
       </header>
     </>
   );

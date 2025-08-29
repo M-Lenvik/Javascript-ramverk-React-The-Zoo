@@ -1,46 +1,35 @@
+/* layout.scss */
 
+// Importera din färgvariabel-fil först.
+@import "../../Styles/color";
+
+// Globala stilar som matchar din design
 body {
-margin: 0; 
-padding: 0; 
-display: flex;
+  background-color: $dark-grey-bg;
+  color: $text-color;
 }
 
+// Huvudlayout för hela sidan
 .layout {
-    width: 100%; 
-    min-height: 100vh;
-    margin-top: 10em;
-    position: relative;
-    z-index: 1;
-    
-    background-color: transparent;
-}
-
-.page-wrapper {
-  box-sizing: border-box;
   width: 100%;
-  max-width: 1200px;
-  min-width: 320px;
-  margin: 0 auto;
-  flex-grow: 1;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 
-
-.page-wrapper > * {
-  box-sizing: border-box;
-  width: 100%;
-}
-
-.page-wrapper main {
+// Huvudinnehåll - main-taggen
+main {
+  margin-top: 6em;
   width: 100%;
   flex-grow: 1;
 }
 
-.content-wrapper{
-    width: 90%;
-    margin: 0 auto;
-    padding: 0;
-    
+// Generella stilar för media
+img,
+table,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
 }

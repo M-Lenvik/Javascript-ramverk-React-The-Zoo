@@ -1,0 +1,91 @@
+/*
+  Enkel CSS Reset
+  Baserad på kända metoder som Normalize.css
+  Tar bort standard-marginals och padding, och sätter standard font-box-sizing.
+*/
+
+/* 1. Sätter en mer intuitiv box-sizing modell globalt. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Tar bort default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* 3. Sätter grundläggande font-stilar för att förbättra läsbarheten */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 4. Resettar listor */
+ol, ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 5. Gömmer SVG-element i IE */
+svg:not([fill]) {
+  fill: currentColor;
+}
+
+/* 6. Fixar problem med fältuppsättningar */
+legend {
+  padding: 0;
+}
+
+/* 7. Gör att bilder blir responsiva av naturen. */
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* 8. Säkerställer att formulärkontroller ärver stilar. */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 9. Tar bort default styling för knappar */
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+/* 10. Undviker text-överflöd. */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  color: rgb(0, 0, 0);
+}

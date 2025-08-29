@@ -47,10 +47,6 @@ export const AnimalReducer = (
       return newState;
     }
 
-    
-
-
-
     default:
       return state;
   }

@@ -1,0 +1,25 @@
+// About.scss
+@import "../../Styles/color";
+
+
+.contact {
+position: fixed;
+  top: 6em;
+  left: 0;
+  padding: 0 2em;
+  width: 50%;
+  padding-top: 7em;
+}
+
+.about-background {
+    position: fixed;
+  top: 0;
+
+right: 0; 
+width: 50%;
+  height: 100vh;
+  background-image: url('/images/camaleont_gemeni_darker.png');
+  background-size: contain;
+  background-position: left 6em;
+  background-repeat: no-repeat;
+}

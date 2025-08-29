@@ -1,3 +1,31 @@
+/*
+// Hjälpfunktioner för testläge
+export const getSecondsSinceFed = (lastFed: string) => {
+  return (Date.now() - new Date(lastFed).getTime()) / 1000; // sekunder
+};
+
+export const getOverviewFeedingStatus = (lastFed: string): "mätt" | "hungrig" | "desperat" => {
+  const seconds = getSecondsSinceFed(lastFed);
+  if (seconds < 10) return "mätt";
+  if (seconds < 30) return "hungrig";
+  return "desperat";
+};
+
+export const getDetailFeedingStatus = (lastFed: string): "mätt" | "hungrig" | "desperat" => {
+  const seconds = getSecondsSinceFed(lastFed);
+  if (seconds < 10) return "mätt";
+  if (seconds < 30) return "hungrig";
+  return "desperat";
+};
+
+export const canFeedAnimal = (lastFed: string): boolean => {
+  const seconds = getSecondsSinceFed(lastFed);
+  return seconds >= 20; // 20 sekunder
+};
+*/
+
+
+// src/helpers/feeding.ts
 // Hjälpfunktioner för matning
 export const getTimeSinceFed = (lastFed: string) => {
   return (Date.now() - new Date(lastFed).getTime()) / (1000 * 60 * 60);
@@ -28,4 +56,18 @@ export const canFeedAnimal = (lastFed: string): boolean => {
 export const getHoursUntilFeedable = (lastFed: string): number => {
   const hours = getTimeSinceFed(lastFed);
   return Math.max(0, 3 - hours);
+};
+
+// För att ändra utskriften
+export const getFeedingStatusText = (status: "mätt" | "hungrig" | "desperat", animalName: string): string => {
+  switch (status) {
+    case "mätt":
+      return `${animalName} är mätt och belåten.`;
+    case "hungrig":
+      return `${animalName} börjar bli sugen på mat.`;
+    case "desperat":
+      return `${animalName} är utsvulten! Det är hög tid att mata!`;
+    default:
+      return `${animalName}s status är okänd.`;
+  }
 };
