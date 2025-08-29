@@ -25,7 +25,6 @@ export const AnimalCard = ({
       <button className="back-button" onClick={onBack}>
         Tillbaka till djuren
       </button>{" "}
-      {/* NY KNAPP */}
       <figure className="image-wrapper">
         <img
           src={animal.imageUrl}
