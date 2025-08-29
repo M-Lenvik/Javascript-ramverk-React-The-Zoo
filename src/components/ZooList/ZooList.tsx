@@ -17,7 +17,7 @@ export const ZooList = ({ animals }: ZooListProps) => {
   return (
     <div className="page-content">
       <div className="zoo-content">
-        <h2>Djuren</h2>
+        <h1>Djuren</h1>
         <p>Mata djuren när de är hungriga</p>
       </div>
       <div className="zoo-flex">
@@ -26,7 +26,7 @@ export const ZooList = ({ animals }: ZooListProps) => {
           return (
             <div key={animal.id} className={`theZooPageAnimal ${status}`}>
               <Link to={`/zoo/${animal.id}`} className="link">
-                <h3>{animal.name}</h3>
+                <h2>{animal.name}</h2>
                 <img
                   src={animal.imageUrl}
                   alt={animal.name}

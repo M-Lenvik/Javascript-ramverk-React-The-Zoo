@@ -5,7 +5,7 @@
 
   .zoo-content {
     width: 100%;
-    h2,
+    h1,
     p {
       text-align: center;
     }
@@ -41,7 +41,7 @@
       border-radius: 8px;
     }
 
-    h3 {
+    h2 {
       text-align: center;
     }
     p {
@@ -54,22 +54,13 @@
     &.mätt {
       border: solid 5px $accent-green;
 
-      box-shadow:
-        0 4px 8px rgba(0, 0, 0, 0.15),
-        -2px -2px 8px #98d093,
-        2px -2px 8px #98d093;
-
-      transition:
-        transform 0.3s ease-out,
-        box-shadow 0.3s ease-out;
-
       &:hover {
         transform: translateY(-10px);
 
         box-shadow:
           0 12px 24px rgba(0, 0, 0, 0.3),
-          -10px -10px 25px #98d093,
-          10px -10px 25px #98d093;
+          -5px -5px 5px #98d093,
+          5px -5px 5px #98d093;
       }
     }
 
@@ -83,6 +74,7 @@
       transition:
         transform 0.3s ease-out,
         box-shadow 0.3s ease-out;
+      animation: glow-pulse-yellow 5s infinite alternate; // Namn | Tid | Upprepas oändligt | Växla riktning
 
       &:hover {
         transform: translateY(-10px);
@@ -104,7 +96,7 @@
       transition:
         transform 0.3s ease-out,
         box-shadow 0.3s ease-out;
-      animation: glow-pulse 10s infinite alternate; // Namn | Tid | Upprepas oändligt | Växla riktning
+      animation: glow-pulse-red 5s infinite alternate; // Namn | Tid | Upprepas oändligt | Växla riktning
 
       &:hover {
         transform: translateY(-10px);

@@ -8,6 +8,8 @@ type AnimalCardProps = {
   status: "mätt" | "hungrig" | "desperat";
   onFeed: () => void;
   feedable: boolean;
+  children?: React.ReactNode;
+  onBack: () => void;
 };
 
 export const AnimalCard = ({
@@ -15,9 +17,12 @@ export const AnimalCard = ({
   status,
   onFeed,
   feedable,
+  children,
+  onBack,
 }: AnimalCardProps) => {
   return (
     <div className={`animal-card ${status}`}>
+        <button className="back-button" onClick={onBack}>Tillbaka till djuren</button> {/* NY KNAPP */}
       <div className="image-wrapper">
         <img
           src={animal.imageUrl}
@@ -27,7 +32,7 @@ export const AnimalCard = ({
         />
 
         <div className="heading-background">
-          <h4>{animal.name}</h4>
+          <h1>{animal.name}</h1>
         </div>
       </div>
 
@@ -40,6 +45,7 @@ export const AnimalCard = ({
             Senast {animal.name} fick mat var{" "}
             {new Date(animal.lastFed).toLocaleString()}.
           </p>
+            {children}
           <button onClick={onFeed} disabled={!feedable}>
             {feedable
               ? `Mata ${animal.name}`

@@ -5,13 +5,13 @@ $accent-green: #98d093;
 $accent-purple: #b94ed2;
 $accent-yellow: #f8b646;
 $accent-red: #892f5d;
-$dark-grey-bg: #353534;
+$dark-grey-bg: #3A3A39;
 $text-color: #e4e4e4;
 
 // Övriga globala variabler
 $shadow-default: 4px 4px 4px 0px #4a4e69;
 
-@keyframes glow-pulse {
+@keyframes glow-pulse-red {
   0% {
     box-shadow: 0 0 0px 0px $accent-red;
   }
@@ -20,5 +20,18 @@ $shadow-default: 4px 4px 4px 0px #4a4e69;
   }
   100% {
     box-shadow: 0 0 0px 0px $accent-red;
+  }
+}
+
+
+@keyframes glow-pulse-yellow {
+  0% {
+    box-shadow: 0 0 0px 0px $accent-yellow;
+  }
+  50% {
+    box-shadow: 0 0 10px 5px $accent-yellow;
+  }
+  100% {
+    box-shadow: 0 0 0px 0px $accent-yellow;
   }
 }

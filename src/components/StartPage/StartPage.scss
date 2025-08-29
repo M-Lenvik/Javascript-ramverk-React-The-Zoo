@@ -19,9 +19,18 @@
   position: fixed;
   top: 6em;
   right: 0;
+  margin-right: 2em;
   padding: 0 2em;
   width: 50%;
   padding-top: 7em;
+
+  h1{
+    margin-bottom: 1em;
+  }
+
+  p {
+    margin-bottom: 1.5em;
+  }
 }
 
 /* Anpassning för skärmar > 500px */
