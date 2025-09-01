@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
 import "./Header.scss";
 
+const logoUrl = `${import.meta.env.BASE_URL}images/logo.png`;
+
 export const Header = () => {
   return (
     <>
@@ -12,7 +14,7 @@ export const Header = () => {
             aria-label="Gå till startsidan"
           >
             <img
-              src="/images/logo.png"
+              src={logoUrl}
               alt="Cameleont-ikon"
               className="header-icon"
             />
