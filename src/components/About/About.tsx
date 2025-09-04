@@ -7,7 +7,6 @@ export const About = () => {
       <div className="contact">
         <h1>Kontakta The Zoo</h1>
         <section className="contact-info">
-          <h2>Kontakta oss</h2>
           <div className="contact-details">
             <p>
               <strong>Adress:</strong> Matkärlsgränd 7, Zoostad
