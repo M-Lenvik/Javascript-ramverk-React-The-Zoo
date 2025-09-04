@@ -13,7 +13,7 @@
 
   display: flex;
   justify-content: center;
-  align-items: center; // Centrering vertikalt
+  align-items: center;
 
   .header-container {
     width: 90%;
@@ -35,7 +35,7 @@
   .header-nav {
     display: flex;
     align-items: center;
-    font-size: 1em; // Mindre font-storlek för mobilt
+    font-size: 1em;
     font-weight: bold;
     text-transform: uppercase;
     flex-grow: 1;
@@ -81,7 +81,7 @@
     }
 
     .header-nav {
-      font-size: 2em; // Återgå till större font-storlek för desktop
+      font-size: 2em;
     }
   }
 }
@@ -90,11 +90,11 @@
 @media (max-width: 450px) {
   .header {
     .header-nav {
-      font-size: 0.8em; // krymp ännu mer för riktigt små mobiler
+      font-size: 0.8em;
     }
 
     .header-icon {
-      height: 3em; // gör loggan lite mindre också om du vill
+      height: 3em;
     }
   }
 }

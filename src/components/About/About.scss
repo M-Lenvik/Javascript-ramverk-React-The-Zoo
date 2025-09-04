@@ -1,10 +1,9 @@
 @import "../../Styles/color";
 
-/* Bakgrundsbild */
 .about-background {
   position: fixed;
   top: 0;
-  right: 0; // flytta till höger sida
+  right: 0;
   width: 100%;
   height: 100vh;
   background-image: url("/images/camaleont_gemeni_darker.png");
@@ -14,7 +13,6 @@
   z-index: -1;
 }
 
-/* Text-overlay (default mobilt) */
 .contact {
   position: fixed;
   top: 0;
@@ -23,7 +21,7 @@
   height: 100vh;
   padding: 7em 2em 2em 2em;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.6); // overlay för mobil
+  background-color: rgba(0, 0, 0, 0.6);
 
   h2 {
     margin-bottom: 1em;
@@ -38,17 +36,17 @@
 @media (min-width: 900px) {
   .about-background {
     width: 50%;
-    right: 0; // håll den på högra halvan
+    right: 0;
     background-position: right 6em;
   }
 
   .contact {
     width: 50%;
-    left: 0; // fyll vänstra halvan
+    left: 0;
     top: 6em;
     padding: 5em 2em 2em 4em;
-    background: none; // ta bort overlay på desktop
-    text-align: left; // valfritt, ser oftast snyggare ut
+    background: none;
+    text-align: left;
   }
 }
 
