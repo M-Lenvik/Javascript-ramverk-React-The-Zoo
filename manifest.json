@@ -1,0 +1,20 @@
+{
+  "name": "The Zoo",
+  "short_name": "The Zoo",
+  "start_url": "/Javascript-ramverk-React-The-Zoo/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "description": "The Zoo är platsen du kan engagera dig i våra djur och själv ge dem mat.",
+  "icons": [
+    {
+      "src": "/Javascript-ramverk-React-The-Zoo/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/Javascript-ramverk-React-The-Zoo/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
