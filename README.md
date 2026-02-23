@@ -1,5 +1,104 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/wHj4KLdN)
+# Kurs: Javascript ramverk - React
 
+## Utbildning till Frontend Developer på Medieinstitutet
+
+Detta är ett interaktivt zoo där besökare kan utforska djur och mata dem. Projektet är byggt med React, TypeScript och SCSS.
+
+Skapad av **Marie Lenvik** <br> https://github.com/M-Lenvik
+
+## Innehållsförteckning
+
+1. [Beskrivning av projektet](#-beskrivning-av-projektet--the-zoo)
+2. [Kom igång med projektet](#kom-igång-med-projektet)
+3. [Teknikstack](#-teknikstack)
+4. [Uppgiftsbeskrivning](#uppgiftsbeskrivning)
+5. [Projektbeskrivning](#projektbeskrivning)
+   1. [Funktionalitet](#funktionalitet)
+   2. [Arkitektur](#arkitektur)
+6. [Slutbetyg](#-slutbetyg)
+7. [Bilder](#bilder)
+
+## 🔍 Beskrivning av projektet 🦁 The Zoo
+
+The Zoo är en interaktiv webbapplikation som simulerar ett digitalt zoo där besökare kan utforska olika djur, läsa om dem och mata dem. Applikationen hämtar djurdatan från ett externt API och presenterar informationen på ett användarvänligt sätt med tydlig visuell feedback om djurens matningsstatus.
+
+Applikationen implementerar ett tidsbaserat matningssystem där djur kan matas enligt specifika regler: på detaljsidan kan ett djur matas om det inte har fått mat på minst 4 timmar, medan översiktssidan visar statusindikationer baserat på något annorlunda tidsintervall för att ge användaren en snabb översikt över vilka djur som behöver uppmärksamhet.
+
+Genom att använda React Router för navigation, Context API och useReducer för state management, samt localStorage för persistens, skapar applikationen en sömlös användarupplevelse där matningsstatus bevaras mellan sessioner.
+
+## Kom igång med projektet
+
+**🛠️ Installera genom följande:**
+
+1. **Kloning av projektet**
+   - `git clone https://github.com/Medieinstitutet/fed24d-the-zoo-M-Lenvik.git`
+   - `cd fed24d-the-zoo-M-Lenvik`
+
+2. **Installera alla beroenden**
+   Projektet är ett Vite-projekt. Kör följande kommando för att installera alla nödvändiga paket enligt package.json:
+
+```shell
+npm install
+```
+
+3. **Starta localhost**
+   Projektet kör nu lokalt på localhost:5173 (eller annan port om 5173 är upptagen). Navigera till projektets rotmapp och kör:
+
+```shell
+npm run dev
+```
+
+💡 **Tips:** Se till att du har Node.js och npm installerat innan du börjar.
+
+4. **Bygga för produktion**
+   För att bygga projektet för produktion:
+
+```shell
+npm run build
+```
+
+5. **Förhandsgranska produktionsbygg**
+   För att förhandsgranska produktionsversionen:
+
+```shell
+npm run preview
+```
+
+## 💻 Teknikstack
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![SCSS](https://img.shields.io/badge/SCSS-%23CC6699.svg?style=for-the-badge&logo=sass&logoColor=white) <br>
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) <br>
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) <br>
+![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
+
+**Tekniska val och motiveringar:**
+
+**React:** Dess komponentbaserade arkitektur med funktionella komponenter och hooks uppmuntrar återanvändbar kod och tydlig separation of concerns. React 19 används med funktionella komponenter och hooks för state management.
+
+**TypeScript:** Lägger till kompileringstid-typsäkerhet, fångar fel under utveckling snarare än i produktion och förbättrar utvecklarupplevelsen. Alla komponenter, helpers och services är fullt typade.
+
+**Vite:** Fungerar som byggverktyg och utvecklingsserver, erbjuder betydligt snabbare start och hot module replacement jämfört med äldre bundlers. Konfigurerad för React med TypeScript.
+
+**SCSS (Sass):** Används för styling med variabler, mixins, nesting och en BEM-inspirerad namngivningskonvention. Designen följer en mobile-first responsiv approach med breakpoints för olika skärmstorlekar.
+
+**React Router:** Client-side routing hanteras med createHashRouter, vilket är nödvändigt för korrekt routing på GitHub Pages statisk hosting, vilket möjliggör en flersidig upplevelse inom en single-page application-arkitektur. Router använder layouts, child-routes och error-element för en strukturerad navigationsupplevelse.
+
+**Context API + useReducer:** State management förlitar sig på Reacts Context API med en dedikerad animalReducer. Detta tillvägagångssätt ger en tydlig och skalbar statestruktur, håller arkitekturen enkel och lämplig för projektets omfattning. Reducer hanterar åtgärder för att sätta djur, mata djur och återställa matningsstatus.
+
+**localStorage:** Djurens matningsstatus sparas lokalt med localStorage, vilket undviker behovet av backend-infrastruktur samtidigt som data förblir sparad mellan sessioner på samma enhet och webbläsare.
+
+**REST API:** Djurdata hämtas från ett externt API (https://animals.azurewebsites.net/api/animals) via en service-funktion som hanterar fel gracefully och returnerar säkra fallback-värden.
+
+**Tekniska referenser:**
+- React 19 dokumentation
+- TypeScript dokumentation
+- Vite dokumentation
+- React Router dokumentation (createHashRouter för GitHub Pages)
+- SCSS/Sass dokumentation
+
+## Uppgiftsbeskrivning
 # The Zoo
 
 I denna inlämningsuppgift kommer ni att bygga ett zoo. Zoo:t har ett antal djur som kommer behöva matas.
@@ -64,9 +163,90 @@ Välj en teknik gällande css som ni antingen vill lära er mer om eller som ni 
 
 Ha roligt, skratta och lär er massor!
 
-## Installation
 
-npm install
-npm install react-router-dom
-npm install sass
+## Projektbeskrivning
+### Funktionalitet
+
+**Steg 1: Startsida**
+Användare börjar på startsidan där syftet med applikationen presenteras. Härifrån kan de navigera till översikten över alla djur eller till informationssidan.
+
+**Steg 2: Djuröversikt**
+I djuröversikten visas alla djur från API:t i en grid-layout. Varje djur presenteras med:
+- Bild (med hantering av trasiga bildlänkar)
+- Namn och kort beskrivning
+- Visuell statusindikation baserat på matningsstatus:
+  - **Mätt:** Djuret har fått mat inom de senaste 3 timmarna
+  - **Hungrig:** Djuret har inte fått mat på 3-5 timmar (varning visas)
+  - **Desperat:** Djuret har inte fått mat på över 5 timmar (notis visas)
+
+Användare kan klicka på ett djur för att navigera till dess detaljsida.
+
+**Steg 3: Djurdetaljsida**
+På detaljsidan presenteras omfattande information om det valda djuret:
+- Stor bild med djurets namn
+- Latinskt namn och födelsedatum
+- Kort och lång beskrivning
+- Matningsstatus med tydlig textbeskrivning
+- Tidpunkt för senaste matning
+- "Mata"-knapp som är:
+  - **Aktiverad:** Om djuret inte har fått mat på minst 4 timmar
+  - **Inaktiverad:** Om djuret har fått mat inom 4 timmar (med visning av återstående tid)
+- Varning om djuret börjar bli hungrigt (efter 3 timmar)
+
+När användaren matar ett djur uppdateras matningstiden och statusen ändras omedelbart.
+
+**Steg 4: Om-sida**
+En informationssida som beskriver projektet och dess syfte.
+
+**Ytterligare funktioner:**
+- Automatisk uppdatering av matningsstatus i realtid
+- Persistens av matningsdata mellan sessioner via localStorage
+- Felhantering för trasiga bildlänkar med fallback-bilder
+
+### Arkitektur
+
+Applikationen följer en tydlig separation of concerns med fyra huvudlager:
+
+**Services (src/services/)**
+Ansvarar för att hämta djurdatan från det externa API:t. `animalService.ts` hanterar fetch-anrop, felhantering och returnerar alltid säkra fallback-värden (tom array vid fel) för att förhindra att applikationen kraschar.
+
+**Helpers (src/helpers/)**
+Organiserade efter ansvar:
+- `feeding.ts` – matningslogik och statusberäkningar (tidsberäkningar, statusbestämning för översikt vs detalj, textformatering)
+- `image.ts` – bildhantering med fallback för trasiga bildlänkar
+
+**Global State – Context + Reducer (src/context/, src/reducers/)**
+All djurstatus hanteras genom AnimalContext och animalReducer.
+- Åtgärder uppdaterar status oföränderligt
+- Varje statusändring sparas automatiskt till localStorage
+- Sparad status återställs vid appladdning
+- Reducer hanterar: SET_ANIMALS, FEED_ANIMAL, RESET_FEEDING_STATUS
+
+**Components och Pages (src/components/, src/pages/)**
+- Pages är routade vyer som komponerar komponenter
+- Components är återanvändbara eller sidspecifika byggstenar
+- Varje komponent har sin egen .tsx och .scss
+- Komponenter är organiserade i feature-baserad struktur: `AnimalCard/`, `ZooList/`, `StartPage/`, `Header/`, `About/`
+
+
+**Datamodell:**
+- **Animal-modell** innehåller: id, name, latinName, yearOfBirth, shortDescription, longDescription, imageUrl, medicine, isFed, lastFed
+- **State** innehåller: array av Animal-objekt med uppdaterade matningstider
+
+
+## 🏆 Slutbetyg
+**Betyg: Väl Godkänt**
+<br>
+<img width="508" height="305" alt="Betyg_the_zoo" src="https://github.com/user-attachments/assets/e198bae3-1559-4e12-abda-a13b773939ab" />
+
+## Bilder
+
+<details>
+<summary><strong>Skärmdumpar från webbplatsen</strong></summary>
+
+**Startsida**
+![Startsida med introduktion](public/images/first_page.png)
+
+**Djuröversikt**
+![Översikt över alla djur](public/images/animals.png)
 
